@@ -2,10 +2,12 @@
 ## Moises C. M.
 
 ## Matrix inversion is usually a costly computation and there may be some benefit to caching
-## the inverse of a matrix rather than compute it repeatedly. Here we have two function to achive
-## this: one creates a special matrix that can hold its inverse, and a second one that calculates
-## the inverse of the special matrix and caches it using the first one (if the special matrix
-## has already the inverse cached, this function just return it.)
+## the inverse of a matrix rather than compute it repeatedly.
+
+## ** Here we have two function to achive this: one creates a special matrix that can hold
+## its inverse, and a second one that calculates the inverse of the special matrix and
+## caches it using the first one (if the special matrix has already the inverse cached, this
+## function just return it.)
 ##
 ## Example:
 ##
@@ -33,8 +35,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## cacheSolve() computes the inverse of the special 'matrix' returned by makeCacheMatrix().
-## If the inverse has already been calculated (and the matrix has not changed), then cacheSolve()
-##  retrieves the inverse from the cache.
+## If the inverse has already been calculated (and the matrix has not changed), then
+## cacheSolve() retrieves the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
@@ -50,3 +52,5 @@ cacheSolve <- function(x, ...) {
     x$setinverse(m)
     m
 }
+
+## end file
